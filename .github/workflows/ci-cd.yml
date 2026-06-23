@@ -89,6 +89,8 @@ jobs:
     needs: [publish-docker-image, build-and-test-frontend]
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    env:
+      PROD_HOST: ${{ secrets.PROD_HOST }}
     steps:
       - name: Trigger Vercel Deployment (Frontend)
         run: |
@@ -99,7 +101,7 @@ jobs:
           curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
 
       - name: Deploy API via SSH (DigitalOcean / AWS EC2)
-        if: secrets.PROD_HOST != ''
+        if: env.PROD_HOST != ''
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_HOST }}
