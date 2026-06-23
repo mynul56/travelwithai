@@ -1,11 +1,62 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "NetTopologySuite/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "TripPlanner.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "NetTopologySuite": "2.6.0"
+        },
+        "compile": {
+          "bin/placeholder/TripPlanner.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TripPlanner.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NetTopologySuite/2.6.0": {
+      "sha512": "1B1OTacTd4QtFyBeuIOcThwSSLUdRZU3bSFIwM8vk36XiZlBMi3K36u74e4OqwwHRHUuJC1PhbDx4hyI266X1Q==",
+      "type": "package",
+      "path": "nettopologysuite/2.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/NetTopologySuite.dll",
+        "lib/netstandard2.0/NetTopologySuite.xml",
+        "lib/netstandard2.1/NetTopologySuite.dll",
+        "lib/netstandard2.1/NetTopologySuite.xml",
+        "nettopologysuite.2.6.0.nupkg.sha512",
+        "nettopologysuite.nuspec"
+      ]
+    },
+    "TripPlanner.Core/1.0.0": {
+      "type": "project",
+      "path": "../TripPlanner.Core/TripPlanner.Core.csproj",
+      "msbuildProject": "../TripPlanner.Core/TripPlanner.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "TripPlanner.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/betopia/.nuget/packages/": {}
@@ -31,7 +82,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/TripPlanner.Core.csproj": {
+              "projectPath": "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/TripPlanner.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

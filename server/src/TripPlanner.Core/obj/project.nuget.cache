@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1ds35CpGKEU=",
+  "dgSpecHash": "uwKvgUw+wog=",
   "success": true,
   "projectFilePath": "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/TripPlanner.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/betopia/.nuget/packages/nettopologysuite/2.6.0/nettopologysuite.2.6.0.nupkg.sha512"
+  ],
   "logs": []
 }

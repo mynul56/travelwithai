@@ -1,0 +1,13 @@
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/bin/Debug/net9.0/TripPlanner.Core.deps.json
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/bin/Debug/net9.0/TripPlanner.Core.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/bin/Debug/net9.0/TripPlanner.Core.pdb
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.csproj.AssemblyReference.cache
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.AssemblyInfoInputs.cache
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.AssemblyInfo.cs
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.csproj.CoreCompileInputs.cache
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.sourcelink.json
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/refint/TripPlanner.Core.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/TripPlanner.Core.pdb
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/obj/Debug/net9.0/ref/TripPlanner.Core.dll

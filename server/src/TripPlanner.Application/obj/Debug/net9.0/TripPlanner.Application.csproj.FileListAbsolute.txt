@@ -1,0 +1,16 @@
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/bin/Debug/net9.0/TripPlanner.Application.deps.json
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/bin/Debug/net9.0/TripPlanner.Application.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/bin/Debug/net9.0/TripPlanner.Application.pdb
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/bin/Debug/net9.0/TripPlanner.Core.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/bin/Debug/net9.0/TripPlanner.Core.pdb
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.csproj.AssemblyReference.cache
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.AssemblyInfoInputs.cache
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.AssemblyInfo.cs
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.csproj.CoreCompileInputs.cache
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.sourcelink.json
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlan.7AF9085E.Up2Date
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/refint/TripPlanner.Application.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/TripPlanner.Application.pdb
+/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/obj/Debug/net9.0/ref/TripPlanner.Application.dll

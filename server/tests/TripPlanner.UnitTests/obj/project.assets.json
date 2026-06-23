@@ -290,6 +290,19 @@
           "build/netcoreapp3.1/Microsoft.TestPlatform.TestHost.props": {}
         }
       },
+      "NetTopologySuite/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -410,6 +423,32 @@
         },
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
+        }
+      },
+      "TripPlanner.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "TripPlanner.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TripPlanner.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TripPlanner.Application.dll": {}
+        }
+      },
+      "TripPlanner.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "NetTopologySuite": "2.6.0"
+        },
+        "compile": {
+          "bin/placeholder/TripPlanner.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TripPlanner.Core.dll": {}
         }
       }
     }
@@ -741,6 +780,22 @@
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
+    "NetTopologySuite/2.6.0": {
+      "sha512": "1B1OTacTd4QtFyBeuIOcThwSSLUdRZU3bSFIwM8vk36XiZlBMi3K36u74e4OqwwHRHUuJC1PhbDx4hyI266X1Q==",
+      "type": "package",
+      "path": "nettopologysuite/2.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/NetTopologySuite.dll",
+        "lib/netstandard2.0/NetTopologySuite.xml",
+        "lib/netstandard2.1/NetTopologySuite.dll",
+        "lib/netstandard2.1/NetTopologySuite.xml",
+        "nettopologysuite.2.6.0.nupkg.sha512",
+        "nettopologysuite.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -932,11 +987,23 @@
         "xunit.runner.visualstudio.2.8.2.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "TripPlanner.Application/1.0.0": {
+      "type": "project",
+      "path": "../../src/TripPlanner.Application/TripPlanner.Application.csproj",
+      "msbuildProject": "../../src/TripPlanner.Application/TripPlanner.Application.csproj"
+    },
+    "TripPlanner.Core/1.0.0": {
+      "type": "project",
+      "path": "../../src/TripPlanner.Core/TripPlanner.Core.csproj",
+      "msbuildProject": "../../src/TripPlanner.Core/TripPlanner.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "Microsoft.NET.Test.Sdk >= 17.12.0",
+      "TripPlanner.Application >= 1.0.0",
+      "TripPlanner.Core >= 1.0.0",
       "coverlet.collector >= 6.0.2",
       "xunit >= 2.9.2",
       "xunit.runner.visualstudio >= 2.8.2"
@@ -966,7 +1033,14 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/TripPlanner.Application.csproj": {
+              "projectPath": "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Application/TripPlanner.Application.csproj"
+            },
+            "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/TripPlanner.Core.csproj": {
+              "projectPath": "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Core/TripPlanner.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
