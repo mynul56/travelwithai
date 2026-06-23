@@ -9,7 +9,7 @@ namespace TripPlanner.Application.Interfaces
     {
         Task<AdminAnalyticsDto> GetAnalyticsAsync();
         Task<List<TripRequest>> GetTripRequestsAsync(string? statusFilter = null);
-        Task<TripRequest> GetTripRequestDetailsAsync(Guid id);
+        Task<TripRequest?> GetTripRequestDetailsAsync(Guid id);
         Task ApproveTripAsync(Guid id, Guid adminUserId);
         Task RejectTripAsync(Guid id, string reason, Guid adminUserId);
         Task TriggerRegenerationAsync(Guid id, Guid adminUserId);

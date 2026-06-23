@@ -27,7 +27,7 @@ namespace TripPlanner.Api.Controllers
         }
 
         [HttpGet("trips")]
-        public async Task<IActionResult> GetTrips([FromQuery] string statusFilter = null)
+        public async Task<IActionResult> GetTrips([FromQuery] string? statusFilter = null)
         {
             var trips = await _adminService.GetTripRequestsAsync(statusFilter);
             return Ok(trips);
@@ -68,6 +68,6 @@ namespace TripPlanner.Api.Controllers
 
     public class RejectRequest
     {
-        public string Reason { get; set; }
+        public string Reason { get; set; } = string.Empty;
     }
 }

@@ -45,7 +45,7 @@ namespace TripPlanner.Infrastructure.Services
             return await query.OrderByDescending(t => t.CreatedAt).ToListAsync();
         }
 
-        public async Task<TripRequest> GetTripRequestDetailsAsync(Guid id)
+        public async Task<TripRequest?> GetTripRequestDetailsAsync(Guid id)
         {
             return await _context.TripRequests
                 .Include(t => t.User)
