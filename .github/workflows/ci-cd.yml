@@ -99,10 +99,11 @@ jobs:
           curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
 
       - name: Deploy API via SSH (DigitalOcean / AWS EC2)
-        if: ${{ secrets.PROD_HOST != '' }}
+        if: secrets.PROD_HOST != ''
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_HOST }}
+          port: 22
           username: ${{ secrets.PROD_USERNAME }}
           key: ${{ secrets.PROD_SSH_KEY }}
           script: |
