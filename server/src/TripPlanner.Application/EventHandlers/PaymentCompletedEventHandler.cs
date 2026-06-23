@@ -1,36 +1,49 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TripPlanner.Application.Events;
-// using TripPlanner.Application.Interfaces; // We will use IServiceProvider to resolve scoped services in a background task
+using TripPlanner.Application.Interfaces;
 
 namespace TripPlanner.Application.EventHandlers
 {
     public class PaymentCompletedEventHandler : INotificationHandler<PaymentCompletedEvent>
     {
         private readonly ILogger<PaymentCompletedEventHandler> _logger;
+        private readonly IServiceScopeFactory _scopeFactory;
 
-        public PaymentCompletedEventHandler(ILogger<PaymentCompletedEventHandler> logger)
+        public PaymentCompletedEventHandler(ILogger<PaymentCompletedEventHandler> logger, IServiceScopeFactory scopeFactory)
         {
             _logger = logger;
+            _scopeFactory = scopeFactory;
         }
 
         public Task Handle(PaymentCompletedEvent notification, CancellationToken cancellationToken)
         {
             _logger.LogInformation("PaymentCompletedEvent triggered for TripRequest: {TripRequestId}", notification.TripRequestId);
 
-            // TODO: In a production app, we would resolve a scoped IServiceScopeFactory here 
-            // and trigger the AI Generation service asynchronously, so the Stripe Webhook can return 200 OK immediately.
-            
-            // For MVP: We mock the background generation start.
-            Task.Run(() => 
+            // Fire and forget background task to generate the trip package
+            Task.Run(async () => 
             {
-                _logger.LogInformation("Starting AI Generation Background Task for {TripRequestId}...", notification.TripRequestId);
-                // 1. Fetch TripRequest from DB
-                // 2. Call OpenAI API via IAiGenerationService
-                // 3. Save TripPackage to DB
-                // 4. Send Email Notification
+                try
+                {
+                    _logger.LogInformation("Starting AI Generation Background Task for {TripRequestId}...", notification.TripRequestId);
+                    
+                    using var scope = _scopeFactory.CreateScope();
+                    var aiService = scope.ServiceProvider.GetRequiredService<IAiGenerationService>();
+                    
+                    var generatedPackage = await aiService.GenerateTripPackageAsync(notification.TripRequestId);
+                    
+                    _logger.LogInformation("AI Generation successful for {TripRequestId}. Saving to DB...", notification.TripRequestId);
+                    
+                    // Here we would use DbContext or a Repository to save generatedPackage to PostgreSQL.
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Background AI Generation failed for {TripRequestId}", notification.TripRequestId);
+                }
             });
 
             return Task.CompletedTask;

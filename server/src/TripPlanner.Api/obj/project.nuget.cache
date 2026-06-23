@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dVLZNZTs2BE=",
+  "dgSpecHash": "whUoUjvyNRo=",
   "success": true,
   "projectFilePath": "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Api/TripPlanner.Api.csproj",
   "expectedPackageFiles": [
@@ -56,7 +56,9 @@
     "/Users/betopia/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.2/npgsql.entityframeworkcore.postgresql.9.0.2.nupkg.sha512",
     "/Users/betopia/.nuget/packages/npgsql.entityframeworkcore.postgresql.nettopologysuite/9.0.2/npgsql.entityframeworkcore.postgresql.nettopologysuite.9.0.2.nupkg.sha512",
     "/Users/betopia/.nuget/packages/npgsql.nettopologysuite/9.0.2/npgsql.nettopologysuite.9.0.2.nupkg.sha512",
+    "/Users/betopia/.nuget/packages/openai/2.0.0/openai.2.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/stripe.net/44.7.0/stripe.net.44.7.0.nupkg.sha512",
+    "/Users/betopia/.nuget/packages/system.clientmodel/1.1.0/system.clientmodel.1.1.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.codedom/6.0.0/system.codedom.6.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.collections.immutable/7.0.0/system.collections.immutable.7.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.composition/7.0.0/system.composition.7.0.0.nupkg.sha512",
@@ -70,11 +72,13 @@
     "/Users/betopia/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.identitymodel.tokens.jwt/8.0.1/system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
+    "/Users/betopia/.nuget/packages/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.reflection.metadata/7.0.0/system.reflection.metadata.7.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.security.accesscontrol/6.0.0/system.security.accesscontrol.6.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.security.cryptography.protecteddata/6.0.0/system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.security.permissions/6.0.0/system.security.permissions.6.0.0.nupkg.sha512",
+    "/Users/betopia/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.text.json/9.0.0/system.text.json.9.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
     "/Users/betopia/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"

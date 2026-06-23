@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Design": "9.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite": "9.0.2",
+          "OpenAI": "2.0.0",
           "Stripe.net": "44.7.0",
           "System.IdentityModel.Tokens.Jwt": "8.0.1",
           "TripPlanner.Application": "1.0.0",
@@ -738,6 +739,18 @@
           }
         }
       },
+      "OpenAI/2.0.0": {
+        "dependencies": {
+          "System.ClientModel": "1.1.0",
+          "System.Diagnostics.DiagnosticSource": "10.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/OpenAI.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "Stripe.net/44.7.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
@@ -747,6 +760,18 @@
           "lib/net6.0/Stripe.net.dll": {
             "assemblyVersion": "44.7.0.0",
             "fileVersion": "44.7.0.0"
+          }
+        }
+      },
+      "System.ClientModel/1.1.0": {
+        "dependencies": {
+          "System.Memory.Data": "1.0.2",
+          "System.Text.Json": "9.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.ClientModel.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.100.24.46703"
           }
         }
       },
@@ -877,6 +902,18 @@
         }
       },
       "System.IO.Pipelines/7.0.0": {},
+      "System.Memory.Data/1.0.2": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "9.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.221.20802"
+          }
+        }
+      },
       "System.Reflection.Metadata/7.0.0": {
         "dependencies": {
           "System.Collections.Immutable": "7.0.0"
@@ -912,6 +949,7 @@
           }
         }
       },
+      "System.Text.Encodings.Web/4.7.2": {},
       "System.Text.Json/9.0.0": {},
       "System.Threading.Channels/7.0.0": {},
       "System.Windows.Extensions/6.0.0": {
@@ -1295,12 +1333,26 @@
       "path": "npgsql.nettopologysuite/9.0.2",
       "hashPath": "npgsql.nettopologysuite.9.0.2.nupkg.sha512"
     },
+    "OpenAI/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WI9e5tC15ZBt02scCp2gcHrjxQRVX2Ws3eUu/YsICqellH3MwdRggGujSZg69oBJMtk1AYmqb9l08ix0l5AcqQ==",
+      "path": "openai/2.0.0",
+      "hashPath": "openai.2.0.0.nupkg.sha512"
+    },
     "Stripe.net/44.7.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-2AGVMRqHr2VxoRxq8dayZZQFpUe34x8obB/KDC8gQb4dqH+5hsy0GGmXJ++eYUETSMruKHrxUWiRgGo1yBozUQ==",
       "path": "stripe.net/44.7.0",
       "hashPath": "stripe.net.44.7.0.nupkg.sha512"
+    },
+    "System.ClientModel/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UocOlCkxLZrG2CKMAAImPcldJTxeesHnHGHwhJ0pNlZEvEXcWKuQvVOER2/NiOkJGRJk978SNdw3j6/7O9H1lg==",
+      "path": "system.clientmodel/1.1.0",
+      "hashPath": "system.clientmodel.1.1.0.nupkg.sha512"
     },
     "System.CodeDom/6.0.0": {
       "type": "package",
@@ -1393,6 +1445,13 @@
       "path": "system.io.pipelines/7.0.0",
       "hashPath": "system.io.pipelines.7.0.0.nupkg.sha512"
     },
+    "System.Memory.Data/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
+      "path": "system.memory.data/1.0.2",
+      "hashPath": "system.memory.data.1.0.2.nupkg.sha512"
+    },
     "System.Reflection.Metadata/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1427,6 +1486,13 @@
       "sha512": "sha512-T/uuc7AklkDoxmcJ7LGkyX1CcSviZuLCa4jg3PekfJ7SU0niF0IVTXwUiNVP9DSpzou2PpxJ+eNY2IfDM90ZCg==",
       "path": "system.security.permissions/6.0.0",
       "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iTUgB/WtrZ1sWZs84F2hwyQhiRH6QNjQv2DkwrH+WP6RoFga2Q1m3f9/Q7FG8cck8AdHitQkmkXSY8qylcDmuA==",
+      "path": "system.text.encodings.web/4.7.2",
+      "hashPath": "system.text.encodings.web.4.7.2.nupkg.sha512"
     },
     "System.Text.Json/9.0.0": {
       "type": "package",
