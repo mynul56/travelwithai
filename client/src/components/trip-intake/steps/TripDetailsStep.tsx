@@ -26,7 +26,7 @@ export function TripDetailsStep() {
   const store = useTripIntakeStore();
   
   const form = useForm<TripDetailsValues>({
-    resolver: zodResolver(tripDetailsSchema),
+    resolver: zodResolver(tripDetailsSchema) as any,
     defaultValues: {
       destination: store.destination,
       travelers: store.travelers,
