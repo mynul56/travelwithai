@@ -13,6 +13,7 @@ namespace TripPlanner.Core.Entities
         public string? Description { get; set; }
         public decimal? TotalEstimatedCost { get; set; }
         public string? AiGenerationMetadata { get; set; } // JSONB mapping
+        public string? PdfUrl { get; set; }
 
         public ICollection<ItineraryDay> ItineraryDays { get; set; } = new List<ItineraryDay>();
 

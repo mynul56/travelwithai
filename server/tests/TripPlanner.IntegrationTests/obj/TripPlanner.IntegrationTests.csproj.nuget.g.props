@@ -22,5 +22,7 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/betopia/.nuget/packages/xunit.analyzers/1.16.0</Pkgxunit_analyzers>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">/Users/betopia/.nuget/packages/awssdk.core/3.7.400.75</PkgAWSSDK_Core>
+    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">/Users/betopia/.nuget/packages/awssdk.s3/3.7.411.3</PkgAWSSDK_S3>
   </PropertyGroup>
 </Project>

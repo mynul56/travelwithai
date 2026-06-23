@@ -33,12 +33,24 @@ namespace TripPlanner.Application.EventHandlers
                     
                     using var scope = _scopeFactory.CreateScope();
                     var aiService = scope.ServiceProvider.GetRequiredService<IAiGenerationService>();
+                    var pdfService = scope.ServiceProvider.GetRequiredService<IPdfGenerationService>();
+                    var fileStorage = scope.ServiceProvider.GetRequiredService<IFileStorageService>();
                     
                     var generatedPackage = await aiService.GenerateTripPackageAsync(notification.TripRequestId);
                     
-                    _logger.LogInformation("AI Generation successful for {TripRequestId}. Saving to DB...", notification.TripRequestId);
+                    _logger.LogInformation("AI Generation successful. Generating PDF...");
+
+                    // Generate PDF
+                    var pdfBytes = await pdfService.GenerateTripPdfAsync(generatedPackage, "Mock Destination");
+                    var pdfFileName = $"trip-{notification.TripRequestId}.pdf";
+
+                    // Upload to S3
+                    var pdfUrl = await fileStorage.UploadPdfAsync(pdfBytes, pdfFileName);
+
+                    _logger.LogInformation("PDF Uploaded to {Url}. Saving TripPackage to DB...", pdfUrl);
                     
-                    // Here we would use DbContext or a Repository to save generatedPackage to PostgreSQL.
+                    // Here we would use DbContext or a Repository to save generatedPackage to PostgreSQL,
+                    // mapping the `pdfUrl` to the TripPackage entity.
                 }
                 catch (Exception ex)
                 {
