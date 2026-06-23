@@ -92,6 +92,10 @@ jobs:
     steps:
       - name: Trigger Vercel Deployment (Frontend)
         run: |
+          if [ -z "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}" ]; then
+            echo "Warning: VERCEL_DEPLOY_HOOK_URL secret not set, skipping Vercel deployment"
+            exit 0
+          fi
           curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
 
       - name: Deploy API via SSH (DigitalOcean / AWS EC2)
