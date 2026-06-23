@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XwmDSYlXRDI=",
+  "success": true,
+  "projectFilePath": "/Users/betopia/mynul_projects/tranvelwithAI/server/src/TripPlanner.Api/TripPlanner.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/betopia/.nuget/packages/microsoft.aspnetcore.openapi/9.0.17/microsoft.aspnetcore.openapi.9.0.17.nupkg.sha512",
+    "/Users/betopia/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
