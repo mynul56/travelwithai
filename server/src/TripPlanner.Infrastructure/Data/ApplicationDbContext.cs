@@ -1,15 +1,16 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TripPlanner.Core.Entities;
+using System;
 
 namespace TripPlanner.Infrastructure.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<User, Role, Guid, IdentityUserClaim<Guid>, UserRole, IdentityUserLogin<Guid>, IdentityRoleClaim<Guid>, IdentityUserToken<Guid>>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; } = null!;
-        public DbSet<Role> Roles { get; set; } = null!;
-        public DbSet<UserRole> UserRoles { get; set; } = null!;
+        // Identity DB sets are already included (Users, Roles, UserRoles)
         public DbSet<AuthenticationLog> AuthenticationLogs { get; set; } = null!;
 
         public DbSet<TripRequest> TripRequests { get; set; } = null!;
@@ -42,8 +43,18 @@ namespace TripPlanner.Infrastructure.Data
             base.OnModelCreating(modelBuilder);
 
             // UserRole Many-to-Many
-            modelBuilder.Entity<UserRole>()
-                .HasKey(ur => new { ur.UserId, ur.RoleId });
+            modelBuilder.Entity<UserRole>(b =>
+            {
+                b.HasKey(ur => new { ur.UserId, ur.RoleId });
+                b.HasOne(ur => ur.Role)
+                    .WithMany(r => r.UserRoles)
+                    .HasForeignKey(ur => ur.RoleId)
+                    .IsRequired();
+                b.HasOne(ur => ur.User)
+                    .WithMany(u => u.UserRoles)
+                    .HasForeignKey(ur => ur.UserId)
+                    .IsRequired();
+            });
 
             // PostGIS Extension for PostgreSQL
             modelBuilder.HasPostgresExtension("postgis");
@@ -89,8 +100,6 @@ namespace TripPlanner.Infrastructure.Data
             modelBuilder.Entity<BlogPost>().HasQueryFilter(e => e.DeletedAt == null);
 
             // Constraints and Indexes
-            modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
-            modelBuilder.Entity<Role>().HasIndex(r => r.Name).IsUnique();
             modelBuilder.Entity<Product>().HasIndex(p => p.Sku).IsUnique();
             modelBuilder.Entity<Category>().HasIndex(c => c.Name).IsUnique();
             modelBuilder.Entity<Coupon>().HasIndex(c => c.Code).IsUnique();

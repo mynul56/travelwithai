@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using TripPlanner.Application.Interfaces;
+using System.Threading.Tasks;
 
 namespace TripPlanner.Api.Controllers
 {
@@ -6,50 +8,60 @@ namespace TripPlanner.Api.Controllers
     [Route("api/v1/[controller]")]
     public class AuthController : ControllerBase
     {
-        [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        private readonly IAuthService _authService;
+
+        public AuthController(IAuthService authService)
         {
-            // TODO: Dispatch RegisterCommand via MediatR
-            return Created("", new { UserId = Guid.NewGuid(), request.Email, AccessToken = "sample-jwt" });
+            _authService = authService;
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        {
+            var (success, errors) = await _authService.RegisterAsync(request.Email, request.Password, request.FirstName, request.LastName);
+            if (!success) return BadRequest(new { Errors = errors });
+
+            // Automatically login after registration or require email verification depending on flow
+            return Created("", new { request.Email, Message = "Registration successful." });
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            // TODO: Dispatch LoginQuery via MediatR
+            var tokens = await _authService.LoginAsync(request.Email, request.Password);
+            if (tokens == null) return Unauthorized(new { Error = "Invalid email or password." });
+
             // Set RefreshToken in HttpOnly Cookie
-            return Ok(new { AccessToken = "sample-jwt", ExpiresIn = 3600 });
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Expires = System.DateTime.UtcNow.AddDays(7)
+            };
+            Response.Cookies.Append("refreshToken", tokens.Value.RefreshToken, cookieOptions);
+
+            return Ok(new { AccessToken = tokens.Value.AccessToken, ExpiresIn = 3600 });
         }
 
         [HttpPost("refresh")]
         public IActionResult Refresh()
         {
-            return Ok(new { AccessToken = "sample-jwt", ExpiresIn = 3600 });
+            var refreshToken = Request.Cookies["refreshToken"];
+            if (string.IsNullOrEmpty(refreshToken)) return Unauthorized();
+
+            // Refresh token logic
+            return Ok(new { AccessToken = "sample-new-jwt", ExpiresIn = 3600 });
         }
 
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            // Clear RefreshToken cookie
+            Response.Cookies.Delete("refreshToken");
             return Ok(new { Message = "Logged out" });
-        }
-
-        [HttpPost("forgot-password")]
-        public IActionResult ForgotPassword([FromBody] ForgotPasswordRequest request)
-        {
-            return Accepted();
-        }
-
-        [HttpPost("verify-email")]
-        public IActionResult VerifyEmail([FromBody] VerifyEmailRequest request)
-        {
-            return Ok();
         }
     }
 
-    // DTOs for contract definition
     public record RegisterRequest(string Email, string Password, string FirstName, string LastName);
     public record LoginRequest(string Email, string Password);
-    public record ForgotPasswordRequest(string Email);
-    public record VerifyEmailRequest(string Email, string Token);
 }
