@@ -139,3 +139,15 @@
 /Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll
 /Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/Stripe.net.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.Configuration.ConfigurationManager.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.Drawing.Common.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.Security.Cryptography.ProtectedData.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.Security.Permissions.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/System.Windows.Extensions.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
+/Users/betopia/mynul_projects/tranvelwithAI/server/tests/TripPlanner.IntegrationTests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
