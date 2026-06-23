@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tripplanner_api
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=TripPlannerDb;Username=postgres;Password=prod_secret_password;
+      - JwtSettings__Secret=YOUR_VERY_SECURE_JWT_SECRET_KEY_1234567890
+      - JwtSettings__Issuer=https://api.tripplanner.com
+      - JwtSettings__Audience=https://app.tripplanner.com
+      - Stripe__WebhookSecret=whsec_your_stripe_secret
+      - OpenAI__ApiKey=sk-your-openai-key
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app_network
+    restart: always
+
+  db:
+    image: postgres:16-alpine
+    container_name: tripplanner_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=prod_secret_password
+      - POSTGRES_DB=TripPlannerDb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app_network
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    container_name: tripplanner_redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass prod_redis_password
+    networks:
+      - app_network
+    restart: always
+
+volumes:
+  pgdata:
+
+networks:
+  app_network:
+    driver: bridge
